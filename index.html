@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Prototype perbaikan UI/UX halaman beranda YouTube untuk tugas evaluasi antarmuka.">
+  <title>YouTube — Homepage UI/UX Redesign</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-area">
+      <button class="icon-button menu-toggle" id="menuToggle" aria-label="Buka atau tutup navigasi"><span class="hamburger">☰</span></button>
+      <a class="brand" href="#" aria-label="YouTube beranda"><span class="brand-mark">▶</span><span>YouTube</span><sup>ID</sup></a>
+    </div>
+
+    <form class="search-area" id="searchForm" role="search">
+      <label class="sr-only" for="searchInput">Cari video</label>
+      <input id="searchInput" type="search" placeholder="Telusuri video..." autocomplete="off">
+      <button class="search-button" type="submit" aria-label="Cari">⌕</button>
+    </form>
+
+    <div class="actions">
+      <button class="create-button" id="createButton"><span>＋</span> <span class="create-label">Buat</span></button>
+      <button class="icon-button notification-button" id="notificationButton" aria-label="Notifikasi">♧<i></i></button>
+      <button class="avatar-button" id="profileButton" aria-label="Profil">J</button>
+    </div>
+  </header>
+
+  <aside class="sidebar" id="sidebar" aria-label="Navigasi utama">
+    <nav>
+      <a class="nav-item active" href="#" data-nav="Beranda"><span class="nav-icon">⌂</span><span class="nav-label">Beranda</span></a>
+      <a class="nav-item" href="#" data-nav="Shorts"><span class="nav-icon">ϟ</span><span class="nav-label">Shorts</span></a>
+      <a class="nav-item" href="#" data-nav="Subscription"><span class="nav-icon">▣</span><span class="nav-label">Subscription</span></a>
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-heading">Koleksi</div>
+      <a class="nav-item" href="#" data-nav="Histori"><span class="nav-icon">◷</span><span class="nav-label">Histori</span></a>
+      <a class="nav-item" href="#" data-nav="Video Anda"><span class="nav-icon">▤</span><span class="nav-label">Video Anda</span></a>
+      <a class="nav-item" href="#" data-nav="Tonton nanti"><span class="nav-icon">◴</span><span class="nav-label">Tonton nanti</span></a>
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-heading">Jelajahi</div>
+      <a class="nav-item" href="#" data-nav="Musik"><span class="nav-icon">♫</span><span class="nav-label">Musik</span></a>
+      <a class="nav-item" href="#" data-nav="Gaming"><span class="nav-icon">♧</span><span class="nav-label">Gaming</span></a>
+      <a class="nav-item" href="#" data-nav="Berita"><span class="nav-icon">▤</span><span class="nav-label">Berita</span></a>
+    </nav>
+    <div class="sidebar-footer">Prototype UI/UX · 2026</div>
+  </aside>
+
+  <main class="main-content" id="mainContent">
+    <div class="category-bar" id="categoryBar" aria-label="Filter kategori">
+      <button class="chip active" data-category="Semua">Semua</button>
+      <button class="chip" data-category="Musik">Musik</button>
+      <button class="chip" data-category="Teknologi">Teknologi</button>
+      <button class="chip" data-category="Gaming">Gaming</button>
+      <button class="chip" data-category="Edukasi">Edukasi</button>
+      <button class="chip" data-category="Hiburan">Hiburan</button>
+      <button class="chip" data-category="Podcast">Podcast</button>
+      <button class="chip" data-category="Berita">Berita</button>
+      <button class="chip" data-category="Animasi">Animasi</button>
+    </div>
+
+    <section class="content-section" aria-labelledby="sectionTitle">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Pilihan untuk kamu</p>
+          <h1 id="sectionTitle">Jelajahi video</h1>
+        </div>
+        <span class="result-count" id="resultCount">12 video</span>
+      </div>
+      <div class="video-grid" id="videoGrid"></div>
+      <div class="empty-state hidden" id="emptyState">
+        <div class="empty-icon">⌕</div>
+        <h2>Video tidak ditemukan</h2>
+        <p>Coba kata kunci atau kategori lain.</p>
+        <button class="reset-button" id="resetButton">Reset pencarian</button>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
